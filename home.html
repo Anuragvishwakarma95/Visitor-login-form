@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins';
+            box-sizing: border-box;
+            
+
+        }
+        body{
+            background-color: rgb(255, 255, 255);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            
+
+        }
+
+        .header{
+            
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            margin-left: 175px;
+            margin-top: -5px;
+            
+            
+            background: transparent;
+            justify-content: center;
+            
+
+        }
+
+        .header .logo img{
+            height: 5rem;
+            
+            
+   
+            
+        }
+        .login-section{
+            height: 630px;
+            width: 400px;
+
+
+
+            
+        }
+        .form-box{
+            position: absolute;
+            left:50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+        }
+        .login-section h2{
+            text-align: center;
+            font-size: 35px;
+            color: #fb831a;
+            margin-top: 7px;
+            
+            
+        }
+
+        
+
+        .form-box .input-box{
+            position: relative;
+            margin: 20px 0;
+            width: 325px;
+            border-bottom: 2px solid #fb831a;
+            
+
+        }
+        .input-box input{
+            width: 110%;
+            height: 45px;
+            border: none;
+            outline: none;
+            padding: 0 35px 0 5px;
+            background: transparent;
+            font-size: 16px;
+            
+
+        }
+        .input-box label{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            transition: .3s;
+            
+
+        }
+        .input-box label sup{
+            color: red;
+            size: 2px;
+        }
+        label sup{
+            color: red;
+            size: 2px;  
+        }
+        select{
+            position:relative;
+            background-origin: padding-box;
+            
+            left: 10px;
+            
+            
+        }
+        
+        input:focus ~ label,
+        input:valid ~ label{
+            top: 0px;
+
+        }
+        #btn{
+            top: 20px;
+            cursor: pointer;
+            width: 100%;
+            height: 40px;
+            background: #fb831a;
+            outline: none;
+            border: none;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 1px;  
+            color: white;
+
+        }
+
+        
+        /* .group-section{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        */
+        /* } */
+        .group-section a{
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s
+            
+        }
+        .group-section a:hover{
+            color: #fb831a;
+            font-weight: 600;
+            text-decoration: underline;
+
+        }
+
+        .spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #007bff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="alpex1.jpg" alt="">
+            </a>
+        </header>
+        
+        
+        <form id="loginForm" action="save.php" method="post">   
+                <div class="login-section">
+                    <div class="form-box">
+                        <h2>Visitor Entry Form</h2>
+                        
+        
+
+                        <div class="input-box">
+                            <input type="text" name="name" >
+                            <label for="">Name:<sup>*</sup></label>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" name="email" >
+                            <label for="">Email:</label>
+
+                        </div>
+
+                        <div class="input-box">
+                        <input type="tel" name="mobile" id="mobile" inputmode="numeric" pattern="[0-9]{10}">
+                            <label for="">Mobile No:<sup>*</sup></label>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" name="company" >
+                            <label for="">Company Name:</label>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="datetime">Date:</label>
+                        <input type="text" id="date" name="date" value="" readonly>
+                        </div><br>
+                        
+
+                        
+
+
+                        <label for="my-dropdown">To Visit:</label>
+                            <select name="visited" id="my-dropdown" required>
+                                <option value="">Select...</option>
+                                <option value="Abhinav Dhankar">Abhinav Dhankar</option>
+                                <option value="Adarsh Singh">Adarsh Singh</option>
+                                <option value="Aditya Sehgal">Aditya Sehgal</option>
+                                <option value="Ajay Pandey">Ajay Pandey</option>
+                                <option value="Amit Kumar">Amit Kumar</option>
+                                <option value="Amit Mehra">Amit Mehra</option>
+                                <option value="Ankit Sharma">Ankit Sharma</option>
+                                <option value="Anurag Vishwakarma">Anurag Vishwakarma</option>
+                                <option value="Arun Singh">Arun Singh</option>
+                                <option value="Ash Sehgal">Ash Sehgal</option>
+                                <option value="Ashish Sikka">Ashish Sikka</option>
+                                <option value="Ashwani Sehgal">Ashwani Sehgal</option>
+                                <option value="Aviral Kumar">Aviral Kumar</option>
+                                <option value="B.C Sikka">B.C Sikka</option>
+                                <option value="Dhiraj Kumar">Dhiraj Kumar</option>
+                                <option value="Dinesh Tiwari">Dinesh Tiwari</option>
+                                <option value="Ganesh Kumar">Ganesh Kumar</option>
+                                <option value="Jatindra Jha">Jatindra Jha</option>
+                                <option value="Jeevan Kishor">Jeevan Kishor</option>
+                                <option value="K. Velmurgan">K. Velmurgan</option>
+                                <option value="Karan Charbra">Karan Charbra</option>
+                                <option value="Lakhan Singh">Lakhan Singh</option>
+                                <option value="M.Mohammad Imthiyaj">M.Mohammad Imthiyaj</option>
+                                <option value="Manish Rekhi">Manish Rekhi</option>
+                                <option value="Medha Salanke">Medha Salanke</option>
+                                <option value="Monica Sehgal">Monica Sehgal</option>
+                                <option value="Nikhil Sharma">Nikhil Sharma</option>
+                                <option value="Rajesh Chaudhary">Rajesh Chaudhary</option>
+                                <option value="Rajinder Kumar">Rajinder Kumar</option>
+                                <option value="Rakesh Shaw">Rakesh Shaw</option>
+                                <option value="Ramjee Gupta">Ramjee Gupta</option>
+                                <option value="Ravi Chauhan">Ravi Chauhan</option>
+                                <option value="Ravi Tripathi">Ravi Tripathi</option>
+                                <option value="Robin Lodh">Robin Lodh</option>
+                                <option value="Sakshi Tomar">Sakshi Tomar</option>
+                                <option value="Sanjeev Kumar">Sanjeev Kumar</option>
+                                <option value="Santosh Tiwari">Santosh Tiwari</option>
+                                <option value="Satish Gupta">Satish Gupta</option>
+                                <option value="Saurabh Sharma">Saurabh Sharma</option>
+                                <option value="Sher Singh">Sher Singh</option>
+                                <option value="Shiv Pratap">Shiv Pratap</option>
+                                <option value="Sudesh Chauhan">Sudesh Chauhan</option>
+                                <option value="Suraj Singh">Suraj Singh</option>
+                                <option value="Trupti Gandhi">Trupti Gandhi</option>
+                                <option value="Vicky Anand">Vicky Anand</option>
+                                <option value="Vikash Pathak">Vikash Pathak</option>
+                                <option value="Vinay Chauhan">Vinay Chauhan</option>
+                                <option value="Vinay Shukla">Vinay Shukla</option>
+                                <option value="Vinay Singh">Vinay Singh</option>
+                                <option value="Vipin Sehgal">Vipin Sehgal</option>
+                                <option value="Vishwajeet Alpex">Vishwajeet Alpex</option>
+                              
+                            </select><br>
+                        
+                            <br>
+
+                        <label for="my-dropdown">Purpose Of Visit:<sup>*</sup></label> 
+                        <select name="purpose" id="dropdown" onchange="showHideTextbox()" required>
+                            <option value="">Select...</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Meeting">Meeting</option>
+                            <option value="Company Visite">Company Visite</option>
+                            <option value="other">Other</option>
+                            </select><br>
+                            <br>
+
+                            <div id="otherInput" class="other-input">
+                            <label for="otherOption" >Specify:</label>
+                            <input type="text" id="otherOption" name="specify" placeholder="enter purpose of visit">
+                            </div><br>
+                            
+                            
+                        
+                        <button type="submit" name="send" id="btn" value="Submit">Submit</button>
+
+                    
+
+                    </div>
+                </div>
+            
+        </form>
+        
+    </div>
+
+
+    <script>
+
+        
+        window.onload = function() {
+            var datetimeField = document.getElementById("date");
+            var currentDate = new Date();
+
+            var dateOptions = { day: 'numeric', month: 'short', year: 'numeric' };
+            var timeOptions = { hour: '2-digit', minute: '2-digit' };
+
+            datetimeField.value = currentDate.toLocaleDateString('en-US', dateOptions) + " " + currentDate.toLocaleTimeString('en-US', timeOptions);
+        };
+
+        function showHideTextbox() {
+            var dropdown = document.getElementById("dropdown");
+            var otherInput = document.getElementById("otherInput");
+
+            if (dropdown.value === "other") {
+                otherInput.style.display = "block";
+            } else {
+                otherInput.style.display = "none";
+            }
+        }
+
+        
+        
+
+    </script>
+
+    
+
+
+    
+</body>
+</html>
+
