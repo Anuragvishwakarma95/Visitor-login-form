@@ -2,7 +2,7 @@
 $server = "localhost";
 $name = "root";
 $password = "";
-$dbname = "visitor";
+$dbname = "data";
 
 $con = mysqli_connect($server, $name, $password, $dbname);
 if (!$con)
@@ -72,16 +72,16 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       =  'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'sharmaanurag888000@gmail.com';                     //SMTP username
-    $mail->Password   = 'dnamtcyvwwnzryjm';                               //SMTP password
+    $mail->Username   = '';                     //SMTP username
+    $mail->Password   = '';                               //SMTP password
     $mail->SMTPSecure =  PHPMailer::ENCRYPTION_SMTPS;           //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 465 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('sharmaanurag888000@gmail.com', 'visitor');
+    $mail->setFrom('', 'Reply');
     
     
-    $mail->addAddress('sharmakhusbu566@gmail.com', 'Anurag');
+    $mail->addAddress('1323@gmail.com', 'Name');
 
 
     
